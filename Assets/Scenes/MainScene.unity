@@ -556,6 +556,7 @@ MonoBehaviour:
   horizontalInput: 0
   mouseButtonDown: 0
   spaceKeyDown: 0
+  shirftKeyDown: 0
 --- !u!114 &613844498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,6 +570,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 1
+  attackStartTime: 0
+  attackSlideDuraton: 0.4
+  attackSlideSpeed: 0.1
+  CurrentState: 0
 --- !u!95 &613844499
 Animator:
   serializedVersion: 5
