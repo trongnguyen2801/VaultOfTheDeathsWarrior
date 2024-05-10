@@ -45,6 +45,12 @@ public class Character : MonoBehaviour
             SwitchStateTo(CharacterState.Attacking);
             return;
         }
+        if (_characterInput.spaceKeyDown && _cc.isGrounded)
+        {
+            SwitchStateTo(CharacterState.Roll);
+            return;
+        }
+        
         _movementVelocity.Set(_characterInput.horizontalInput, 0f, _characterInput.verticalInput);
         _movementVelocity.Normalize();
         _movementVelocity = Quaternion.Euler(0, -45f, 0) * _movementVelocity;
@@ -155,6 +161,11 @@ public class Character : MonoBehaviour
     }
     
     public void AttackAnimationEnds()
+    {
+        SwitchStateTo(CharacterState.Normal);
+    }
+    
+    public void RollAnimationEnds()
     {
         SwitchStateTo(CharacterState.Normal);
     }
