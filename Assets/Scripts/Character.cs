@@ -27,7 +27,7 @@ public class Character : MonoBehaviour
     
     public enum CharacterState
     {
-        Normal, Attacking, Dead, BeingHit, Slide,Spawn,Sprint,
+        Normal, Attacking, Dead, BeingHit, Slide,Spawn,Sprint,Roll
     }
     public CharacterState CurrentState;
 
@@ -126,6 +126,8 @@ public class Character : MonoBehaviour
                 break;
             case CharacterState.Dead:
                 break;
+            case CharacterState.Roll:
+                break;
         }
         
         switch (newState)
@@ -143,6 +145,9 @@ public class Character : MonoBehaviour
             case CharacterState.Spawn:
                 break;
             case CharacterState.Dead:
+                break;
+            case CharacterState.Roll:
+                _animator.SetTrigger("Roll");
                 break;
         }
 
