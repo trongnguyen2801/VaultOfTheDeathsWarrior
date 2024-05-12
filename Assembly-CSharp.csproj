@@ -46,7 +46,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets/Scripts/Character.cs" />
+     <Compile Include="Assets/Scripts/Health.cs" />
      <Compile Include="Assets/ProjectLittleAdventurer/Tool/G_CullManager.cs" />
+     <Compile Include="Assets/Scripts/DamageCaster.cs" />
      <Compile Include="Assets/ProjectLittleAdventurer/Tool/CullingGroupExample.cs" />
      <Compile Include="Assets/Cartoon Heroes/Scripts/SetCharacter/SetCharacter.cs" />
      <Compile Include="Assets/ProjectLittleAdventurer/Tool/G_Culler.cs" />
@@ -55,81 +57,59 @@
      <Folder Include="Assets/Cartoon Heroes/Character Prefabs/Female" />
      <Folder Include="Assets/ProjectLittleAdventurer/VFX/Materials" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/MainMenu" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Book 010" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Character/Sword/Texture" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_2/3D/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Candle 001" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Legs/Legs_3/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Legs/Legs_3" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_3/3D" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Pillar 001" />
      <Folder Include="Assets/Cartoon Heroes/Character Prefabs" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Torsos/Torso_1" />
-     <Folder Include="Assets/Simple Modular Dungeon/Prefabs/Particle Systems/Chest" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Hairs/Hair_1/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Legs/Legs_3" />
      <Folder Include="Assets/ProjectLittleAdventurer/VFX" />
      <Folder Include="Assets/Scripts" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Fire_Materials" />
-     <Folder Include="Assets/Simple Modular Dungeon/Scenes" />
+     <Folder Include="Assets/Prefabs/New Folder" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Torsos/Torso_3" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Torsos/Torso_1" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Legs" />
      <Folder Include="Assets/Cartoon Heroes/Scenes" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Doorway 001" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Torsos/Base Torso" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Legs" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Doorway 004" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Book 004" />
      <Folder Include="Assets/Cartoon Heroes/Scripts/SetCharacter" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Animation Skeleton/Animations" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Book 001" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Bookshelf 001" />
      <Folder Include="Assets/Prefabs" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Hairs/Hair_1" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Legs/Legs_1" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Environment/Texture/Statue" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Crate 001" />
-     <Folder Include="Assets/Simple Modular Dungeon/Prefabs/Props" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Torsos/Torso_2/Materials" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/MainMenu/Meshes" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Hairs/Hair_2/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Torsos/Torso_1/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Hairs" />
      <Folder Include="Assets/Cartoon Heroes" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Stone Fire Chalice 001" />
+     <Folder Include="Assets/FantasyMonster/Skeleton" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Legs/Legs_1" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Chest 001" />
-     <Folder Include="Assets/Simple Modular Dungeon/Prefabs/Walls/Walls" />
+     <Folder Include="Assets/Animation" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Legs/Legs_3" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Legs/Legs_2" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_2" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Legs/Legs_2/Materials" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Floor Variation 001" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Pillar 002" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Character/MainCharacter" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Hairs/Hair_2/Materials" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Wall 004" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Torsos" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_4/3D/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Torsos/Torso_1" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Hairs/Hair_1" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Book 002" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Torsos/Torso_2/Materials" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Pillar 003" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_3/3D/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Hairs/Hair_1/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Torsos/Torso_3" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Bookshelf Empty 001" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Heads/Head_3" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Doorway Gated 003" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Legs" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Hairs/Hair_4" />
      <Folder Include="Assets/ProjectLittleAdventurer/VFX/Shaders" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Hairs/Hair_4" />
-     <Folder Include="Assets/Simple Modular Dungeon/Prefabs/Arch &amp; Pillars" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Heads/Head 2" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Torsos/Torso_2" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D" />
@@ -141,77 +121,49 @@
      <Folder Include="Assets/Cartoon Heroes/Female/Textures" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Environment/Prefab" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Heads/Head_1" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Stone Fire Chalice 002" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Stairs 001" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Legs" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Environment/Shader" />
+     <Folder Include="Assets/FantasyMonster/Skeleton/Character/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Legs/Base Legs" />
-     <Folder Include="Assets/Simple Modular Dungeon/Prefabs/Particle Systems/Chest/Chest Light" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Bookshelf empty 002" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Heads/Head_1" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Heads" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Wall 005" />
+     <Folder Include="Assets/FantasyMonster/Skeleton/Texture" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Torsos/Base Torso/Materials" />
      <Folder Include="Assets/ProjectLittleAdventurer/Prefab/UI" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Heads/Head_3/Materials" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Floor Variation 002" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Doorway 002" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Heads/Head_3" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Book 007" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Mesh Containers" />
-     <Folder Include="Assets/Simple Modular Dungeon/Prefabs/Particle Systems" />
      <Folder Include="Assets/ProjectLittleAdventurer/VFX/Textures" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Torsos/Torso_2" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_4/3D" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Texture Maps/Fire_Texture" />
      <Folder Include="Assets/ProjectLittleAdventurer/Tool" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Podium Large 001" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Book 003" />
      <Folder Include="Assets/ProjectLittleAdventurer/UI" />
      <Folder Include="Assets/ProjectLittleAdventurer/PP" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Character" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Legs/Legs_1/Materials" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Bookshelf 002" />
-     <Folder Include="Assets/Simple Modular Dungeon/Prefabs/Walls" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Water Grate 001" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Heads" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_3/Textures" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Metal Grate 001" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Door 001" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Podium 002" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Torsos/Base Torso/Materials" />
      <Folder Include="Assets/ProjectLittleAdventurer" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Heads/Head 3/Materials" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Character/NPC_01/Texture" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Hairs/Hair_3" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Heads" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Lava Grate 001" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Arch 001" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Book 008" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Hairs" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Environment/Material" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Hairs" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Hairs/Hair_2" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Barrel 001" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Heads/Head_1/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Legs/Legs_3" />
      <Folder Include="Assets/Scenes" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Hairs/Hair_3" />
      <Folder Include="Assets/ProjectLittleAdventurer/Settings" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Podium 003" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Torsos/Torso_1" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Hairs/Hair_2" />
      <Folder Include="Assets/Cartoon Heroes/Character Prefabs/Male" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Legs/Legs_3/Materials" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Torch 001" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Doorway Gated 001" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Hairs/Hair_4" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Doorway 006" />
+     <Folder Include="Assets/FantasyMonster/Skeleton/Ani/Materials" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Character/NPC_02/Texture" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Arch 002" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Wall 006" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Wall 001" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Legs/Legs_1" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Hairs/Hair_3/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Torsos" />
@@ -220,11 +172,7 @@
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Environment/Mesh" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Character/NPC_01" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Torsos/Torso_3" />
-     <Folder Include="Assets/Simple Modular Dungeon" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_1/Textures" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Doorway 005" />
-     <Folder Include="Assets/Simple Modular Dungeon/Prefabs/Floors &amp; Stair" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Wall 007" />
      <Folder Include="Assets/ProjectLittleAdventurer/VFX/Prefab" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Hairs/Hair_3/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Legs/Base Legs" />
@@ -241,23 +189,18 @@
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_2/3D" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Animation Skeleton/Animations" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Animation Skeleton" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Candelabra 001" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Torsos" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Heads/Head 1" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Podium 001" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Hairs/Hair_4" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_1/3D" />
-     <Folder Include="Assets/Simple Modular Dungeon/Prefabs/Light Sources" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Hairs/Hair_4/Materials" />
-     <Folder Include="Assets/Simple Modular Dungeon/Instructions" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Texture Maps" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Floor Variation 003" />
+     <Folder Include="Assets/FantasyMonster/Skeleton/Ani" />
+     <Folder Include="Assets/FantasyMonster/Skeleton/Character" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Heads/Head_2" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Hairs/Hair_3" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Torsos/Base Torso" />
      <Folder Include="Assets/ProjectLittleAdventurer/VFX/VFX" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_2/Textures" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Doorway Gated 002" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Environment/Texture" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Heads/Head_2/Materials" />
      <Folder Include="Assets/ProjectLittleAdventurer/Prefab/MainMenu" />
@@ -268,37 +211,26 @@
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Heads" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Heads/Head 3" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Legs/Base Legs" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Small Crate 001" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_4/Textures" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Floor Plain 001" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Hairs/Hair_4/Materials" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Book 005" />
+     <Folder Include="Assets/Scenes/MainScene" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Legs/Legs_1/Materials" />
-     <Folder Include="Assets/Simple Modular Dungeon/Prefabs/Particle Systems/Fire Prefab" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Environment" />
      <Folder Include="Assets/Cartoon Heroes/Weapons" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Heads/Head_3" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Torch 002" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Torsos/Torso_1/Materials" />
-     <Folder Include="Assets/Simple Modular Dungeon/Prefabs" />
-     <Folder Include="Assets/Simple Modular Dungeon/Prefabs/Props/Books" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_1/3D/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Heads/Head_2" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Torsos/Base Torso" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Heads/Head 2/Materials" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Wall 003" />
+     <Folder Include="Assets/FantasyMonster" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Torsos/Torso_3" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Book 006" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Book 009" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Legs/Legs_2" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_3" />
      <Folder Include="Assets/ProjectLittleAdventurer/Settings/BehindTheWall" />
-     <Folder Include="Assets/Simple Modular Dungeon/Prefabs/Walls/Doorways" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Legs/Legs_2/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Legs/Legs_2" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Wall 002" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Character/MainCharacter/Texture" />
-     <Folder Include="Assets/Simple Modular Dungeon/Components/Materials/Doorway 003" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Animation Skeleton" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_4" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Legs/Base Legs/Materials" />
@@ -941,6 +873,9 @@
      <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.VSCode.Editor">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.EditorCoroutines.Editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
      </Reference>
@@ -955,6 +890,9 @@
      </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Runtime">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.AI.Navigation.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
@@ -1001,9 +939,6 @@
      <Reference Include="Unity.VisualEffectGraph.Editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VisualEffectGraph.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.VisualScripting.Flow">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.VisualScripting.Flow.Editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
      </Reference>
@@ -1012,6 +947,9 @@
      </Reference>
      <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Flow">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
@@ -1034,6 +972,9 @@
      <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.AI.Navigation.Updater">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.AI.Navigation.Updater.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
      </Reference>
@@ -1055,14 +996,17 @@
      <Reference Include="Unity.RenderPipelines.Universal.Shaders">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.AI.Navigation.Editor">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.AI.Navigation.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
      </Reference>
      <Reference Include="Cinemachine">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.VSCode.Editor">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+     <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
