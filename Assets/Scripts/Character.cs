@@ -28,7 +28,7 @@ public class Character : MonoBehaviour
     
     
     //Enemy
-    private UnityEngine.AI.NavMeshAgent _navMeshAgent;
+    private NavMeshAgent _navMeshAgent;
     private Transform TargetPlayer;
     
     //DamageCaster
@@ -39,7 +39,7 @@ public class Character : MonoBehaviour
     
     public enum CharacterState
     {
-        Normal, Attacking, Dead, BeingHit, Slide,Spawn,Sprint,Roll
+        Normal, Attacking, Dead, BeingHit, Slide,Spawn,Sprint,Roll, Jump
     }
     public CharacterState CurrentState;
 
@@ -186,6 +186,8 @@ public class Character : MonoBehaviour
                 break;
             case CharacterState.Roll:
                 break;
+            case CharacterState.Jump:
+                break;
         }
         
         switch (newState)
@@ -212,6 +214,9 @@ public class Character : MonoBehaviour
                 break;
             case CharacterState.Roll:
                 _animator.SetTrigger("Roll");
+                break;
+            case CharacterState.Jump:
+                _animator.SetTrigger("Jump");
                 break;
         }
 

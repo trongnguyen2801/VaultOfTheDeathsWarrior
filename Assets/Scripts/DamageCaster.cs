@@ -12,7 +12,7 @@ public class DamageCaster : MonoBehaviour
     public int damage = 30;
     private void Awake()
     {
-        _damageCaster = GetComponentInChildren<Collider>();
+        _damageCaster = GetComponent<Collider>();
         _damageTargetList = new List<Collider>();
     }
 
