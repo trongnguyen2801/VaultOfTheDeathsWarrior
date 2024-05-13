@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,11 +10,16 @@ public class Health : MonoBehaviour
     [SerializeField]
     private int _currentHealth;
 
+    private void Awake()
+    {
+        _currentHealth = _maxHealth;
+    }
+
     public void ApplyDamage(int damage)
     {
         if (_currentHealth > 0)
         {
-            _currentHealth -= _currentHealth;
+            _currentHealth -= damage;
         }
 
         if (_currentHealth <= 0)
