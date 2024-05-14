@@ -393,7 +393,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.32030857
+      - time: 0.16718356
         functionName: EnableDamageCaster
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -443,7 +443,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.31057814
+      - time: 0.16995314
         functionName: EnableDamageCaster
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -493,7 +493,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.42059135
+      - time: 0.12059136
         functionName: EnableDamageCaster
         data: 
         objectReferenceParameter: {instanceID: 0}

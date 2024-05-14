@@ -35,7 +35,7 @@ public class Character : MonoBehaviour
     private DamageCaster _damageCaster;
     
     //Health
-    private Health _health;
+    public Health _health;
     
     public enum CharacterState
     {
@@ -101,8 +101,14 @@ public class Character : MonoBehaviour
         {
             _navMeshAgent.SetDestination(transform.position);
             _animator.SetFloat("Run", 0f);
+            StartCoroutine(WaitForSeconds(0.3f));
             SwitchStateTo(CharacterState.Attacking);
         }
+    }
+
+    IEnumerator WaitForSeconds(float sec)
+    {
+        yield return new WaitForSeconds(sec);
     }
 
     private void FixedUpdate()
@@ -225,7 +231,6 @@ public class Character : MonoBehaviour
     
     public void AttackAnimationEnds()
     {
-        Debug.Log("Player attack anim call end");
         SwitchStateTo(CharacterState.Normal);
     }
 
