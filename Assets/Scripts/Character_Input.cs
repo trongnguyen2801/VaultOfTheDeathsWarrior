@@ -2,47 +2,53 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Character_Input : MonoBehaviour
 {
-    public float verticalInput;
-    public float horizontalInput;
+    [Header("Character Input Values")]
+    public Vector2 move;
+    public bool jump;
+    public bool sprint;
+    public bool roll;
+
+    public void OnMove(InputValue value)
+    {
+        MoveInput(value.Get<Vector2>());
+    }
+
+    public void OnJump(InputValue value)
+    {
+        JumpInput(value.isPressed);
+    }
+
+    public void OnSprint(InputValue value)
+    {
+        SprintInput(value.isPressed);
+    }
     
-    public bool mouseButtonDown;
-    public bool spaceKeyDown;
-    public bool shirftKeyDown;
-
-    void Update()
+    public void OnRoll(InputValue value)
     {
-        if (!mouseButtonDown && Time.timeScale != 0)
-        {
-            mouseButtonDown = Input.GetMouseButtonDown(0);
-        }
-
-        if (!spaceKeyDown && Time.timeScale != 0)
-        {
-            spaceKeyDown = Input.GetKeyDown(KeyCode.Space);
-        }
-        if (!shirftKeyDown && Time.timeScale != 0)
-        {
-            shirftKeyDown = Input.GetKeyDown(KeyCode.LeftShift);
-        }
-        
-        verticalInput = Input.GetAxisRaw("Vertical");
-        horizontalInput = Input.GetAxisRaw("Horizontal");
+        RollInput(value.isPressed);
     }
 
-    private void OnDisable()
+    private void MoveInput(Vector2 moveDirections)
     {
-        ClearCache();
+        move = moveDirections;
     }
 
-    public void ClearCache()
+    private void JumpInput(bool jumpState)
     {
-        verticalInput = 0;
-        horizontalInput = 0;
-        spaceKeyDown = false;
-        shirftKeyDown = false;
-        mouseButtonDown = false;
+        jump = jumpState;
+    }
+    
+    private void RollInput(bool jumpState)
+    {
+        roll = jumpState;
+    }
+    
+    private void SprintInput(bool sprintState)
+    {
+        sprint = sprintState;
     }
 }

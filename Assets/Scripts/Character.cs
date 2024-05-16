@@ -3,18 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 
 public class Character : MonoBehaviour
 {
     private CharacterController _cc;
-    private Character_Input _characterInput;
+    private Character_Input _input;
     private Animator _animator;
+    private PlayerInput _playerInput;
     
-    private float _moveSpeed = 1f;
+    [SerializeField]
+    private float _moveSpeed;
+    private float _runSpeed = 0.3f;
+    private float _sprinteSpeed = 0.4f;
+    
     private Vector3 _movementVelocity;
     private float _verticalVelocity;
 
-    private float _gravity = -0.9f;
+    private float _gravity = -9.81f;
     public bool isPlayer = true;
     private float _attackAnimationDuration;
     
@@ -60,34 +66,46 @@ public class Character : MonoBehaviour
         }
         else
         {
-            _characterInput = GetComponent<Character_Input>();
+            _input = GetComponent<Character_Input>();
+            _playerInput = GetComponent<PlayerInput>();
         }
     }
 
+    public Vector3 testMoveDirection;
     private void CalculateMovementPlayer()
     {
-        if (_characterInput.mouseButtonDown && _cc.isGrounded)
+        _moveSpeed = _input.sprint ? _sprinteSpeed : _runSpeed;
+        if (_input.move == Vector2.zero)
         {
-            SwitchStateTo(CharacterState.Attacking);
-            return;
-        }
-        if (_characterInput.spaceKeyDown && _cc.isGrounded)
-        {
-            SwitchStateTo(CharacterState.Roll);
-            return;
+            _moveSpeed = 0f;
         }
         
-        _movementVelocity.Set(_characterInput.horizontalInput, 0f, _characterInput.verticalInput);
-        _movementVelocity.Normalize();
-        _movementVelocity = Quaternion.Euler(0, -45f, 0) * _movementVelocity;
-        _animator.SetFloat("Run",_movementVelocity.magnitude);
-        _movementVelocity *= _moveSpeed * Time.deltaTime;
+        float inputMagnitude = _input.move.magnitude;
         
-        if (_movementVelocity != Vector3.zero)
+        Vector3 moveDirections = new Vector3(_input.move.x,0f,_input.move.y);
+        moveDirections = Quaternion.Euler(0, -45f, 0) * moveDirections;
+        if (moveDirections != Vector3.zero)
         {
-            transform.rotation = Quaternion.LookRotation(_movementVelocity);
+            transform.rotation = Quaternion.LookRotation(moveDirections);
         }
+        
+        _animator.SetFloat("Speed",_moveSpeed);
+        _animator.SetFloat("MotionSpeed",inputMagnitude);
+        
+        if (!_cc.isGrounded)
+        {
+            _verticalVelocity = _gravity;
+        }
+        else
+        {
+            _verticalVelocity = _gravity * 0.3f;
+        }
+        
+        // move the player
+        _cc.Move(moveDirections.normalized * (_moveSpeed * Time.deltaTime) +
+                 new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
     }
+    
 
     private void CalculateMovementEnemy()
     {
@@ -134,16 +152,16 @@ public class Character : MonoBehaviour
                         float lerpTime = timePassed / attackSlideDuraton;
                         _movementVelocity = Vector3.Lerp(transform.forward * attackSlideSpeed, Vector3.zero, lerpTime);
                     }
-                    if (_characterInput.mouseButtonDown && _cc.isGrounded)
-                    {
-                        _attackAnimationDuration = _animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
-                        if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "Male Attack 3" && _attackAnimationDuration > 0.5f)
-                        {
-                            _characterInput.mouseButtonDown = false;
-                            SwitchStateTo(CharacterState.Attacking);
-                            CalculateMovementPlayer();
-                        }
-                    }
+                    // if (_characterInput.mouseButtonDown && _cc.isGrounded)
+                    // {
+                    //     _attackAnimationDuration = _animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+                    //     if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "Male Attack 3" && _attackAnimationDuration > 0.5f)
+                    //     {
+                    //         _characterInput.mouseButtonDown = false;
+                    //         SwitchStateTo(CharacterState.Attacking);
+                    //         CalculateMovementPlayer();
+                    //     }
+                    // }
                 }
                 break;
             case CharacterState.Slide:
@@ -151,29 +169,13 @@ public class Character : MonoBehaviour
             case CharacterState.Dead:
                 break;
         }
-        
-        if (isPlayer)
-        {
-            if (!_cc.isGrounded)
-            {
-                _verticalVelocity = _gravity;
-            }
-            else
-            {
-                _verticalVelocity = _gravity * 0.3f;
-            }
-
-            _movementVelocity += _verticalVelocity * Vector3.up * Time.deltaTime;
-            _cc.Move(_movementVelocity);
-            _movementVelocity = Vector3.zero;
-        }
     }
 
     private void SwitchStateTo(CharacterState newState)
     {
         if (isPlayer)
         {
-            _characterInput.ClearCache();
+            // _characterInput.ClearCache();
         }
 
         switch (CurrentState)
