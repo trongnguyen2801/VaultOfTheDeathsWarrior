@@ -400,14 +400,14 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.68119353
+      - time: 0.5082612
         functionName: DisableDamageCaster
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.88747436
+      - time: 0.9137901
         functionName: AttackAnimationEnds
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -457,7 +457,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.8329857
+      - time: 0.82922626
         functionName: AttackAnimationEnds
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -507,7 +507,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.6543015
+      - time: 0.9205554
         functionName: AttackAnimationEnds
         data: 
         objectReferenceParameter: {instanceID: 0}

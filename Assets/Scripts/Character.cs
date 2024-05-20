@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 public class Character : MonoBehaviour
 {
@@ -13,16 +14,24 @@ public class Character : MonoBehaviour
     private PlayerInput _playerInput;
     
     [SerializeField]
-    private float _moveSpeed;
-    private float _runSpeed = 0.3f;
-    private float _sprinteSpeed = 0.4f;
-    
-    private Vector3 _movementVelocity;
-    private float _verticalVelocity;
-
-    private float _gravity = -9.81f;
+    public float _moveSpeed;
+    public float _runSpeed = 0.3f;
+    public float _sprintSpeed = 0.4f;
+    public float JumpHeight = 2.2f;
     public bool isPlayer = true;
+
+    public InputActionReference attack;
+    
+    [Space(10)]
     private float _attackAnimationDuration;
+    private float _gravity = -9.81f;
+    private Vector3 _verticalVelocity;
+    private float _fallTimeoutDelta;
+    private float _jumpTimeoutDelta;
+
+    [Space(10)]
+    public float JumpTimeout = 0.3f;
+    public float FallTimeout = 0.15f;
     
     //PlayerSlide
     public float attackStartTime;
@@ -48,7 +57,7 @@ public class Character : MonoBehaviour
         Normal, Attacking, Dead, BeingHit, Slide,Spawn,Sprint,Roll, Jump
     }
     public CharacterState CurrentState;
-
+    
     private void Awake()
     {
         _cc = GetComponent<CharacterController>();
@@ -71,39 +80,83 @@ public class Character : MonoBehaviour
         }
     }
 
-    public Vector3 testMoveDirection;
+    private void Start()
+    {
+        _jumpTimeoutDelta = JumpTimeout;
+        _fallTimeoutDelta = FallTimeout;
+    }
+
     private void CalculateMovementPlayer()
     {
-        _moveSpeed = _input.sprint ? _sprinteSpeed : _runSpeed;
-        if (_input.move == Vector2.zero)
+        if (_input.attack && _cc.isGrounded)
         {
-            _moveSpeed = 0f;
+            SwitchStateTo(CharacterState.Attacking);
+            return;
         }
+        
+        _moveSpeed = _input.sprint ? _sprintSpeed : _runSpeed;
+        
+        if (_input.move == Vector2.zero) _moveSpeed = 0.0f;
+        if (_cc.isGrounded && _verticalVelocity.y < 0) _verticalVelocity.y = 0;
         
         float inputMagnitude = _input.move.magnitude;
         
         Vector3 moveDirections = new Vector3(_input.move.x,0f,_input.move.y);
         moveDirections = Quaternion.Euler(0, -45f, 0) * moveDirections;
+        
         if (moveDirections != Vector3.zero)
         {
             transform.rotation = Quaternion.LookRotation(moveDirections);
         }
-        
+
         _animator.SetFloat("Speed",_moveSpeed);
         _animator.SetFloat("MotionSpeed",inputMagnitude);
         
-        if (!_cc.isGrounded)
+        // move the player
+        _cc.Move(moveDirections * (_moveSpeed * Time.deltaTime) +
+        new Vector3(0.0f, _verticalVelocity.y, 0.0f) * Time.deltaTime);
+    }
+    
+    private void JumpAndGravity()
+    {
+        if (_cc.isGrounded)
         {
-            _verticalVelocity = _gravity;
+            _fallTimeoutDelta = FallTimeout;
+                        
+            //stop dropping infinite when grounded
+            if (_verticalVelocity.y < 0.0f)
+            {
+                _verticalVelocity.y = -2f;
+            }
+
+            if (_input.jump && _jumpTimeoutDelta <= 0.0f)
+            {
+                _verticalVelocity.y += Mathf.Sqrt(JumpHeight * -3.0f * _gravity);
+            }
+            
+            // if (_hasAnimator)
+            // {
+            //     _animator.SetBool(_animIDJump, false);
+            //     _animator.SetBool(_animIDFreeFall, false);
+            // }
+            
+            if (_jumpTimeoutDelta >= 0.0f)
+            {
+                _jumpTimeoutDelta -= Time.deltaTime;
+            }
         }
         else
         {
-            _verticalVelocity = _gravity * 0.3f;
+            _jumpTimeoutDelta = JumpTimeout;
+            
+            if (_fallTimeoutDelta >= 0.0f)
+            {
+                _fallTimeoutDelta -= Time.deltaTime;
+            }
+            
+            _verticalVelocity.y += _gravity * Time.deltaTime;
+            _input.jump = false;
         }
-        
-        // move the player
-        _cc.Move(moveDirections.normalized * (_moveSpeed * Time.deltaTime) +
-                 new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
     }
     
 
@@ -136,6 +189,7 @@ public class Character : MonoBehaviour
             case CharacterState.Normal:
                 if (isPlayer)
                 {
+                    JumpAndGravity();
                     CalculateMovementPlayer();
                 }
                 else
@@ -146,22 +200,22 @@ public class Character : MonoBehaviour
             case CharacterState.Attacking:
                 if (isPlayer)
                 {
-                    if (Time.deltaTime < attackSlideDuraton + attackStartTime)
-                    {
-                        float timePassed = Time.time - attackStartTime;
-                        float lerpTime = timePassed / attackSlideDuraton;
-                        _movementVelocity = Vector3.Lerp(transform.forward * attackSlideSpeed, Vector3.zero, lerpTime);
-                    }
-                    // if (_characterInput.mouseButtonDown && _cc.isGrounded)
+                    // if (Time.deltaTime < attackSlideDuraton + attackStartTime)
                     // {
-                    //     _attackAnimationDuration = _animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
-                    //     if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "Male Attack 3" && _attackAnimationDuration > 0.5f)
-                    //     {
-                    //         _characterInput.mouseButtonDown = false;
-                    //         SwitchStateTo(CharacterState.Attacking);
-                    //         CalculateMovementPlayer();
-                    //     }
+                    //     float timePassed = Time.time - attackStartTime;
+                    //     float lerpTime = timePassed / attackSlideDuraton;
+                    //     _input.move = Vector3.Lerp(transform.forward * attackSlideSpeed, Vector3.zero, lerpTime);
                     // }
+                    if (_input.attack && _cc.isGrounded)
+                    {
+                        _attackAnimationDuration = _animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+                        if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "Male Attack 3" && _attackAnimationDuration > 0.7f)
+                        {
+                            _input.attack = false;
+                            SwitchStateTo(CharacterState.Attacking);
+                            CalculateMovementPlayer();
+                        }
+                    }
                 }
                 break;
             case CharacterState.Slide:
@@ -175,7 +229,7 @@ public class Character : MonoBehaviour
     {
         if (isPlayer)
         {
-            // _characterInput.ClearCache();
+            _input.ClearCache();
         }
 
         switch (CurrentState)
@@ -233,6 +287,7 @@ public class Character : MonoBehaviour
     
     public void AttackAnimationEnds()
     {
+        Debug.Log("Call anim end");
         SwitchStateTo(CharacterState.Normal);
     }
 

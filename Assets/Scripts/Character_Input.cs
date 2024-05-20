@@ -11,6 +11,7 @@ public class Character_Input : MonoBehaviour
     public bool jump;
     public bool sprint;
     public bool roll;
+    public bool attack;
 
     public void OnMove(InputValue value)
     {
@@ -32,12 +33,17 @@ public class Character_Input : MonoBehaviour
         RollInput(value.isPressed);
     }
 
+    public void OnAttack(InputValue value)
+    {
+        AttackInput(value.isPressed);
+    }
+    
     private void MoveInput(Vector2 moveDirections)
     {
         move = moveDirections;
     }
 
-    private void JumpInput(bool jumpState)
+    private void JumpInput(bool jumpState) 
     {
         jump = jumpState;
     }
@@ -50,5 +56,19 @@ public class Character_Input : MonoBehaviour
     private void SprintInput(bool sprintState)
     {
         sprint = sprintState;
+    }
+    
+    private void AttackInput(bool attackState)
+    {
+        attack = attackState;
+    }
+
+    public void ClearCache()
+    {
+        attack = false;
+        jump = false;
+        sprint = false;
+        roll = false;
+        move = Vector2.zero;
     }
 }
