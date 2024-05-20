@@ -164,6 +164,7 @@
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Character" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Legs/Legs_1/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Heads" />
+     <Folder Include="Assets/Sprites" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_3/Textures" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Torsos/Base Torso/Materials" />
      <Folder Include="Assets/ProjectLittleAdventurer" />
