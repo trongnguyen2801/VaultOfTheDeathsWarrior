@@ -153,17 +153,6 @@
                 },
                 {
                     "name": "",
-                    "id": "6a3e6447-4428-4434-a6b8-79f6e9985d6a",
-                    "path": "<Gamepad>/leftStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "b2241068-296b-4fcb-91d9-470fd39226ed",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -227,17 +216,6 @@
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        },
-        {
-            "name": "Mouse",
-            "bindingGroup": "Mouse",
-            "devices": [
-                {
-                    "devicePath": "<Mouse>",
                     "isOptional": false,
                     "isOR": false
                 }

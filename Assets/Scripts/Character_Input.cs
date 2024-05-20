@@ -69,6 +69,5 @@ public class Character_Input : MonoBehaviour
         jump = false;
         sprint = false;
         roll = false;
-        move = Vector2.zero;
     }
 }

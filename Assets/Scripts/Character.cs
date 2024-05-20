@@ -20,8 +20,6 @@ public class Character : MonoBehaviour
     public float JumpHeight = 2.2f;
     public bool isPlayer = true;
 
-    public InputActionReference attack;
-    
     [Space(10)]
     private float _attackAnimationDuration;
     private float _gravity = -9.81f;
@@ -69,7 +67,7 @@ public class Character : MonoBehaviour
         {
             _navMeshAgent = GetComponent<NavMeshAgent>();
             TargetPlayer = GameObject.FindWithTag("Player").transform;
-            _navMeshAgent.speed = _moveSpeed;
+            _navMeshAgent.speed = 2f;
             // SwitchStateTo(CharacterState.Spawn);
             SwitchStateTo(CharacterState.Normal);
         }
@@ -162,18 +160,19 @@ public class Character : MonoBehaviour
 
     private void CalculateMovementEnemy()
     {
-        float _distancePTE = Vector3.Distance(TargetPlayer.position, transform.position);
-        if (_distancePTE >= _navMeshAgent.stoppingDistance)
+        if (Vector3.Distance(TargetPlayer.position, transform.position) >= _navMeshAgent.stoppingDistance)
         {
             _navMeshAgent.SetDestination(TargetPlayer.position);
-            _animator.SetFloat("Run",0.2f);
+            _animator.SetFloat("Walk",_navMeshAgent.speed);
+            Debug.Log(Vector3.Distance(TargetPlayer.position, transform.position));
         }
         else
         {
             _navMeshAgent.SetDestination(transform.position);
-            _animator.SetFloat("Run", 0f);
+            _animator.SetFloat("Walk", 0f);
             StartCoroutine(WaitForSeconds(0.3f));
             SwitchStateTo(CharacterState.Attacking);
+            Debug.Log("Attack To Target");
         }
     }
 
@@ -209,7 +208,7 @@ public class Character : MonoBehaviour
                     if (_input.attack && _cc.isGrounded)
                     {
                         _attackAnimationDuration = _animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
-                        if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "Male Attack 3" && _attackAnimationDuration > 0.7f)
+                        if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "Male Attack 3" && _attackAnimationDuration > 0.5f)
                         {
                             _input.attack = false;
                             SwitchStateTo(CharacterState.Attacking);
@@ -231,7 +230,6 @@ public class Character : MonoBehaviour
         {
             _input.ClearCache();
         }
-
         switch (CurrentState)
         {
             case CharacterState.Normal:
