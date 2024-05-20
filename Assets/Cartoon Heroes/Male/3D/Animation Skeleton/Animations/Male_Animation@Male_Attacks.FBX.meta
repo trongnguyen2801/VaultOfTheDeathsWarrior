@@ -407,7 +407,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.9137901
+      - time: 0.6877839
         functionName: AttackAnimationEnds
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -457,7 +457,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.82922626
+      - time: 0.6032201
         functionName: AttackAnimationEnds
         data: 
         objectReferenceParameter: {instanceID: 0}
