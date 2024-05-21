@@ -42,7 +42,8 @@ public class Character : MonoBehaviour
     
     //Enemy
     private NavMeshAgent _navMeshAgent;
-    private Transform TargetPlayer;
+    private Transform _targetPlayer;
+    public Transform targetPlayer => _targetPlayer;
     
     //DamageCaster
     private DamageCaster _damageCaster;
@@ -66,7 +67,7 @@ public class Character : MonoBehaviour
         if (!isPlayer)
         {
             _navMeshAgent = GetComponent<NavMeshAgent>();
-            TargetPlayer = GameObject.FindWithTag("Player").transform;
+            _targetPlayer = GameObject.FindWithTag("Player").transform;
             _navMeshAgent.speed = 2f;
             // SwitchStateTo(CharacterState.Spawn);
             SwitchStateTo(CharacterState.Normal);
@@ -160,11 +161,11 @@ public class Character : MonoBehaviour
 
     private void CalculateMovementEnemy()
     {
-        if (Vector3.Distance(TargetPlayer.position, transform.position) >= _navMeshAgent.stoppingDistance)
+        if (Vector3.Distance(_targetPlayer.position, transform.position) >= _navMeshAgent.stoppingDistance)
         {
-            _navMeshAgent.SetDestination(TargetPlayer.position);
+            _navMeshAgent.SetDestination(_targetPlayer.position);
             _animator.SetFloat("Walk",_navMeshAgent.speed);
-            Debug.Log(Vector3.Distance(TargetPlayer.position, transform.position));
+            Debug.Log(Vector3.Distance(_targetPlayer.position, transform.position));
         }
         else
         {
@@ -235,6 +236,15 @@ public class Character : MonoBehaviour
             case CharacterState.Normal:
                 break;
             case CharacterState.Attacking:
+                if (_damageCaster != null)
+                {
+                    DisableDamageCaster();
+                }
+
+                if (isPlayer)
+                {
+                    GetComponent<VFXPlayerController>().StopBlade();
+                }
                 break;
             case CharacterState.Sprint:
                 break;
@@ -257,7 +267,7 @@ public class Character : MonoBehaviour
             case CharacterState.Attacking:
                 if (!isPlayer)
                 {
-                    Quaternion newRotation = Quaternion.LookRotation(TargetPlayer.position - transform.position);
+                    Quaternion newRotation = Quaternion.LookRotation(_targetPlayer.position - transform.position);
                     transform.rotation = newRotation;
                 }
                 
@@ -313,4 +323,11 @@ public class Character : MonoBehaviour
         _damageCaster.DisableDamageCaster();
     }
     
+    public void RotateToTarget()
+    {
+        if (CurrentState != CharacterState.Dead)
+        {
+            transform.LookAt(_targetPlayer, Vector3.up);
+        }
+    }
 }
