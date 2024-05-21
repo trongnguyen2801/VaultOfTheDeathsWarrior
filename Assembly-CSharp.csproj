@@ -45,13 +45,16 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.14f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets/VFXPlayerController.cs" />
      <Compile Include="Assets/Scripts/Character.cs" />
      <Compile Include="Assets/Scripts/Health.cs" />
      <Compile Include="Assets/ProjectLittleAdventurer/Tool/G_CullManager.cs" />
      <Compile Include="Assets/Scripts/DamageCaster.cs" />
      <Compile Include="Assets/ProjectLittleAdventurer/Tool/CullingGroupExample.cs" />
      <Compile Include="Assets/Cartoon Heroes/Scripts/SetCharacter/SetCharacter.cs" />
+     <Compile Include="Assets/Scripts/EnemyAttackController.cs" />
      <Compile Include="Assets/ProjectLittleAdventurer/Tool/G_Culler.cs" />
+     <Compile Include="Assets/MagicAttackController.cs" />
      <Compile Include="Assets/Scripts/Character_Input.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets/Cartoon Heroes/Character Prefabs/Female" />
