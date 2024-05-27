@@ -20,8 +20,8 @@ public class DamageCaster : MonoBehaviour
     {
         if (other.CompareTag(targetTag) && !_damageTargetList.Contains(other))
         {
-            Character _targetCC = other.GetComponent<Character>();
-            _targetCC.ApplyDamage(damage);
+            Character targetCc = other.GetComponent<Character>();
+            targetCc.ApplyDamage(damage,transform.parent.position);
             _damageTargetList.Add(other);
         }
     }

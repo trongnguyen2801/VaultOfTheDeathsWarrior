@@ -15,15 +15,19 @@ public class Character : MonoBehaviour
     
     [SerializeField]
     public float _moveSpeed;
-    public float _runSpeed = 0.3f;
-    public float _sprintSpeed = 0.4f;
+    public float _runSpeed = 2.5f;
+    public float _sprintSpeed = 4f;
     public float JumpHeight = 2.2f;
     public bool isPlayer = true;
 
     [Space(10)]
     private float _attackAnimationDuration;
     private float _gravity = -9.81f;
+    
     private Vector3 _verticalVelocity;
+    private Vector3 _movementVelocity;
+    private Vector3 _impactOnPlayer;
+    
     private float _fallTimeoutDelta;
     private float _jumpTimeoutDelta;
 
@@ -50,20 +54,25 @@ public class Character : MonoBehaviour
     
     //Health
     public Health _health;
-    
+
+    private bool _isInvincible;
+    private float _invincibleDuration = 1f;
     public enum CharacterState
     {
         Normal, Attacking, Dead, BeingHit, Slide,Spawn,Sprint,Roll, Jump
     }
     public CharacterState CurrentState;
-    
+    private bool _hasAnimator;
+
     private void Awake()
     {
+        _isInvincible = false; // tesst
         _cc = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
         _damageCaster = GetComponentInChildren<DamageCaster>();
         _health = GetComponent<Health>();
-        
+        _hasAnimator = TryGetComponent(out _animator);
+
         if (!isPlayer)
         {
             _navMeshAgent = GetComponent<NavMeshAgent>();
@@ -100,20 +109,18 @@ public class Character : MonoBehaviour
         
         float inputMagnitude = _input.move.magnitude;
         
-        Vector3 moveDirections = new Vector3(_input.move.x,0f,_input.move.y);
-        moveDirections = Quaternion.Euler(0, -45f, 0) * moveDirections;
+        _movementVelocity = new Vector3(_input.move.x,0f,_input.move.y);
+        _movementVelocity.Normalize();
+        _movementVelocity = Quaternion.Euler(0, -45f, 0) * _movementVelocity;
+        _movementVelocity *= _moveSpeed * Time.deltaTime;
         
-        if (moveDirections != Vector3.zero)
+        if (_movementVelocity != Vector3.zero)
         {
-            transform.rotation = Quaternion.LookRotation(moveDirections);
+            transform.rotation = Quaternion.LookRotation(_movementVelocity);
         }
 
         _animator.SetFloat("Speed",_moveSpeed);
         _animator.SetFloat("MotionSpeed",inputMagnitude);
-        
-        // move the player
-        _cc.Move(moveDirections * (_moveSpeed * Time.deltaTime) +
-        new Vector3(0.0f, _verticalVelocity.y, 0.0f) * Time.deltaTime);
     }
     
     private void JumpAndGravity()
@@ -121,6 +128,11 @@ public class Character : MonoBehaviour
         if (_cc.isGrounded)
         {
             _fallTimeoutDelta = FallTimeout;
+            
+            if (_hasAnimator)
+            {
+                _animator.SetBool("Jump", false);
+            }
                         
             //stop dropping infinite when grounded
             if (_verticalVelocity.y < 0.0f)
@@ -131,13 +143,8 @@ public class Character : MonoBehaviour
             if (_input.jump && _jumpTimeoutDelta <= 0.0f)
             {
                 _verticalVelocity.y += Mathf.Sqrt(JumpHeight * -3.0f * _gravity);
+                _animator.SetBool("Jump", true);
             }
-            
-            // if (_hasAnimator)
-            // {
-            //     _animator.SetBool(_animIDJump, false);
-            //     _animator.SetBool(_animIDFreeFall, false);
-            // }
             
             if (_jumpTimeoutDelta >= 0.0f)
             {
@@ -165,7 +172,7 @@ public class Character : MonoBehaviour
         {
             _navMeshAgent.SetDestination(_targetPlayer.position);
             _animator.SetFloat("Walk",_navMeshAgent.speed);
-            Debug.Log(Vector3.Distance(_targetPlayer.position, transform.position));
+            // Debug.Log(Vector3.Distance(_targetPlayer.position, transform.position));
         }
         else
         {
@@ -173,7 +180,6 @@ public class Character : MonoBehaviour
             _animator.SetFloat("Walk", 0f);
             StartCoroutine(WaitForSeconds(0.3f));
             SwitchStateTo(CharacterState.Attacking);
-            Debug.Log("Attack To Target");
         }
     }
 
@@ -200,12 +206,12 @@ public class Character : MonoBehaviour
             case CharacterState.Attacking:
                 if (isPlayer)
                 {
-                    // if (Time.deltaTime < attackSlideDuraton + attackStartTime)
-                    // {
-                    //     float timePassed = Time.time - attackStartTime;
-                    //     float lerpTime = timePassed / attackSlideDuraton;
-                    //     _input.move = Vector3.Lerp(transform.forward * attackSlideSpeed, Vector3.zero, lerpTime);
-                    // }
+                    if (Time.deltaTime < attackSlideDuraton + attackStartTime)
+                    {
+                        float timePassed = Time.time - attackStartTime;
+                        float lerpTime = timePassed / attackSlideDuraton;
+                        _movementVelocity = Vector3.Lerp(transform.forward * attackSlideSpeed, Vector3.zero, lerpTime);
+                    }
                     if (_input.attack && _cc.isGrounded)
                     {
                         _attackAnimationDuration = _animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
@@ -220,12 +226,26 @@ public class Character : MonoBehaviour
                 break;
             case CharacterState.Slide:
                 break;
+            case CharacterState.BeingHit:
+                if (_impactOnPlayer.magnitude > 0.2f)
+                {
+                    _movementVelocity = _impactOnPlayer * Time.deltaTime;
+                }
+                _impactOnPlayer = Vector3.Lerp(_impactOnPlayer, Vector3.zero, Time.deltaTime * 5);
+                break;
             case CharacterState.Dead:
                 break;
         }
+
+        if (isPlayer)
+        {
+            // move the player
+            _cc.Move(_movementVelocity + _verticalVelocity * Time.deltaTime);
+            _movementVelocity = Vector3.zero;
+        }
     }
 
-    private void SwitchStateTo(CharacterState newState)
+    public void SwitchStateTo(CharacterState newState)
     {
         if (isPlayer)
         {
@@ -278,15 +298,24 @@ public class Character : MonoBehaviour
                 break;
             case CharacterState.Slide:
                 break;
+            case CharacterState.BeingHit:
+                _animator.SetTrigger("BeingHit");
+                if (isPlayer)
+                {
+                    _isInvincible = true;
+                    StartCoroutine(DelayCancelInvincible());
+                }
+                break;
             case CharacterState.Spawn:
                 break;
             case CharacterState.Dead:
+                _cc.enabled = false;
+                _animator.SetTrigger("Dead");
                 break;
             case CharacterState.Roll:
                 _animator.SetTrigger("Roll");
                 break;
             case CharacterState.Jump:
-                _animator.SetTrigger("Jump");
                 break;
         }
 
@@ -295,13 +324,45 @@ public class Character : MonoBehaviour
     
     public void AttackAnimationEnds()
     {
-        Debug.Log("Call anim end");
         SwitchStateTo(CharacterState.Normal);
     }
 
-    public void ApplyDamage(int val)
+    public void BeingHitAnimationEnd()
     {
-        _health.ApplyDamage(val);
+        SwitchStateTo(CharacterState.Normal);
+    }
+    
+    IEnumerator DelayCancelInvincible()
+    {
+        yield return new WaitForSeconds(_invincibleDuration);
+        _isInvincible = false;
+    }
+
+    public void ApplyDamage(int val, Vector3 attackerPos = new Vector3())
+    {
+        if (_isInvincible)
+        {
+            return;
+        }
+
+        if (_health != null)
+        {
+            _health.ApplyDamage(val);
+        }
+
+        if (isPlayer)
+        {
+            SwitchStateTo(CharacterState.BeingHit);
+            AddImpact(attackerPos,10f);
+        }
+    }
+
+    private void AddImpact(Vector3 attackerPos, float force)
+    {
+        Vector3 impactDir = transform.position - attackerPos;
+        impactDir.Normalize();
+        impactDir.y = 0;
+        _impactOnPlayer = impactDir * force;
     }
 
     public void AddHealth(int val)
