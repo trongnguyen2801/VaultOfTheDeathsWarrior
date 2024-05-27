@@ -43,7 +43,18 @@ public class Character : MonoBehaviour
     //Combo Melee
     public float attackCoolDown = 1f;
     
-    
+    // animation IDs
+    private int _animIDSpeed;
+    private int _animIDGrounded;
+    private int _animIDJump;
+    private int _animIDFall;
+    private int _animIDMotionSpeed;
+    private int _animIDWalk;
+    private int _animIDDead;
+    private int _animIDBeingHit;
+    private int _animIDAttack;
+    private int _animIDRoll;
+
     //Enemy
     private NavMeshAgent _navMeshAgent;
     private Transform _targetPlayer;
@@ -66,13 +77,6 @@ public class Character : MonoBehaviour
 
     private void Awake()
     {
-        _isInvincible = false; // tesst
-        _cc = GetComponent<CharacterController>();
-        _animator = GetComponent<Animator>();
-        _damageCaster = GetComponentInChildren<DamageCaster>();
-        _health = GetComponent<Health>();
-        _hasAnimator = TryGetComponent(out _animator);
-
         if (!isPlayer)
         {
             _navMeshAgent = GetComponent<NavMeshAgent>();
@@ -90,8 +94,31 @@ public class Character : MonoBehaviour
 
     private void Start()
     {
+        _cc = GetComponent<CharacterController>();
+        _animator = GetComponent<Animator>();
+        _damageCaster = GetComponentInChildren<DamageCaster>();
+        _health = GetComponent<Health>();
+        _hasAnimator = TryGetComponent(out _animator);
+        
         _jumpTimeoutDelta = JumpTimeout;
         _fallTimeoutDelta = FallTimeout;
+        _isInvincible = false; // tesst
+        
+        AssignAnimationIDs();
+    }
+    
+    private void AssignAnimationIDs()
+    {
+        _animIDSpeed = Animator.StringToHash("Speed");
+        _animIDGrounded = Animator.StringToHash("Ground");
+        _animIDJump = Animator.StringToHash("Jump");
+        _animIDFall = Animator.StringToHash("Fall");
+        _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+        _animIDWalk = Animator.StringToHash("Walk");
+        _animIDDead = Animator.StringToHash("Dead");
+        _animIDBeingHit = Animator.StringToHash("BeingHit");
+        _animIDAttack = Animator.StringToHash("Attack");
+        _animIDRoll = Animator.StringToHash("Roll");
     }
 
     private void CalculateMovementPlayer()
@@ -99,6 +126,12 @@ public class Character : MonoBehaviour
         if (_input.attack && _cc.isGrounded)
         {
             SwitchStateTo(CharacterState.Attacking);
+            return;
+        }
+        
+        if (_input.roll && _cc.isGrounded)
+        {
+            SwitchStateTo(CharacterState.Roll);
             return;
         }
         
@@ -119,8 +152,13 @@ public class Character : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(_movementVelocity);
         }
 
-        _animator.SetFloat("Speed",_moveSpeed);
-        _animator.SetFloat("MotionSpeed",inputMagnitude);
+        _animator.SetFloat(_animIDSpeed,_moveSpeed);
+        _animator.SetFloat(_animIDMotionSpeed,inputMagnitude);
+        
+        if (_hasAnimator)
+        {
+            _animator.SetBool(_animIDGrounded, _cc.isGrounded);
+        }
     }
     
     private void JumpAndGravity()
@@ -131,7 +169,8 @@ public class Character : MonoBehaviour
             
             if (_hasAnimator)
             {
-                _animator.SetBool("Jump", false);
+                _animator.SetBool(_animIDJump, false);
+                _animator.SetBool(_animIDFall, false);
             }
                         
             //stop dropping infinite when grounded
@@ -143,7 +182,7 @@ public class Character : MonoBehaviour
             if (_input.jump && _jumpTimeoutDelta <= 0.0f)
             {
                 _verticalVelocity.y += Mathf.Sqrt(JumpHeight * -3.0f * _gravity);
-                _animator.SetBool("Jump", true);
+                _animator.SetBool(_animIDJump, true);
             }
             
             if (_jumpTimeoutDelta >= 0.0f)
@@ -159,6 +198,13 @@ public class Character : MonoBehaviour
             {
                 _fallTimeoutDelta -= Time.deltaTime;
             }
+            else
+            {
+                if (_hasAnimator)
+                {
+                    _animator.SetBool(_animIDFall, true);
+                }
+            }
             
             _verticalVelocity.y += _gravity * Time.deltaTime;
             _input.jump = false;
@@ -171,13 +217,13 @@ public class Character : MonoBehaviour
         if (Vector3.Distance(_targetPlayer.position, transform.position) >= _navMeshAgent.stoppingDistance)
         {
             _navMeshAgent.SetDestination(_targetPlayer.position);
-            _animator.SetFloat("Walk",_navMeshAgent.speed);
+            _animator.SetFloat(_animIDWalk,_navMeshAgent.speed);
             // Debug.Log(Vector3.Distance(_targetPlayer.position, transform.position));
         }
         else
         {
             _navMeshAgent.SetDestination(transform.position);
-            _animator.SetFloat("Walk", 0f);
+            _animator.SetFloat(_animIDWalk, 0f);
             StartCoroutine(WaitForSeconds(0.3f));
             SwitchStateTo(CharacterState.Attacking);
         }
@@ -215,7 +261,7 @@ public class Character : MonoBehaviour
                     if (_input.attack && _cc.isGrounded)
                     {
                         _attackAnimationDuration = _animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
-                        if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "Male Attack 3" && _attackAnimationDuration > 0.5f)
+                        if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "Combo_01_4" && _attackAnimationDuration > 0.5f)
                         {
                             _input.attack = false;
                             SwitchStateTo(CharacterState.Attacking);
@@ -291,7 +337,7 @@ public class Character : MonoBehaviour
                     transform.rotation = newRotation;
                 }
                 
-                _animator.SetTrigger("Attack");
+                _animator.SetTrigger(_animIDAttack);
                 attackStartTime = Time.time;
                 break;
             case CharacterState.Sprint:
@@ -299,7 +345,7 @@ public class Character : MonoBehaviour
             case CharacterState.Slide:
                 break;
             case CharacterState.BeingHit:
-                _animator.SetTrigger("BeingHit");
+                _animator.SetTrigger(_animIDBeingHit);
                 if (isPlayer)
                 {
                     _isInvincible = true;
@@ -310,10 +356,10 @@ public class Character : MonoBehaviour
                 break;
             case CharacterState.Dead:
                 _cc.enabled = false;
-                _animator.SetTrigger("Dead");
+                _animator.SetTrigger(_animIDDead);
                 break;
             case CharacterState.Roll:
-                _animator.SetTrigger("Roll");
+                _animator.SetTrigger(_animIDRoll);
                 break;
             case CharacterState.Jump:
                 break;
@@ -327,7 +373,12 @@ public class Character : MonoBehaviour
         SwitchStateTo(CharacterState.Normal);
     }
 
-    public void BeingHitAnimationEnd()
+    public void BeingHitAnimationEnds()
+    {
+        SwitchStateTo(CharacterState.Normal);
+    }
+    
+    public void RollAnimationEnds()
     {
         SwitchStateTo(CharacterState.Normal);
     }
@@ -353,7 +404,7 @@ public class Character : MonoBehaviour
         if (isPlayer)
         {
             SwitchStateTo(CharacterState.BeingHit);
-            AddImpact(attackerPos,10f);
+            AddImpact(attackerPos,5f);
         }
     }
 
@@ -368,10 +419,6 @@ public class Character : MonoBehaviour
     public void AddHealth(int val)
     {
         _health.AddHealth(val);
-    }
-    public void RollAnimationEnds()
-    {
-        SwitchStateTo(CharacterState.Normal);
     }
     
     public void EnableDamageCaster()

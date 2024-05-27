@@ -391,7 +391,7 @@ ModelImporter:
       curves: []
       events:
       - time: 0.8747159
-        functionName: BeingHitAnimationEnd
+        functionName: BeingHitAnimationEnds
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

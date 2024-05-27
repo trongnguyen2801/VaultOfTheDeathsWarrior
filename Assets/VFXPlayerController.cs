@@ -7,6 +7,7 @@ public class VFXPlayerController : MonoBehaviour
     public ParticleSystem vfxBlade01;
     public ParticleSystem vfxBlade02;
     public ParticleSystem vfxBlade03;
+    public ParticleSystem vfxBlade04;
 
     public void PlayVfxBlade01()
     {
@@ -21,6 +22,11 @@ public class VFXPlayerController : MonoBehaviour
         vfxBlade03.Play();
     }
     
+    public void PlayVfxBlade04()
+    {
+        vfxBlade04.Play();
+    }
+    
     public void StopBlade()
     {
         vfxBlade01.Simulate(0);
@@ -29,5 +35,7 @@ public class VFXPlayerController : MonoBehaviour
         vfxBlade02.Stop();
         vfxBlade03.Simulate(0);
         vfxBlade03.Stop();
+        vfxBlade04.Simulate(0);
+        vfxBlade04.Stop();
     }
 }
