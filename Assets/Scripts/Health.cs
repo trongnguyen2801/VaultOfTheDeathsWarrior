@@ -9,10 +9,12 @@ public class Health : MonoBehaviour
     private int _maxHealth = 100;
     [SerializeField]
     private int _currentHealth;
+    private Character _cc;
 
     private void Awake()
     {
         _currentHealth = _maxHealth;
+        _cc = GetComponent<Character>();
     }
 
     public void ApplyDamage(int damage)
@@ -25,6 +27,7 @@ public class Health : MonoBehaviour
         if (_currentHealth <= 0)
         {
             Debug.Log("death");
+            _cc.SwitchStateTo(Character.CharacterState.Dead);
         }
         Debug.Log(_currentHealth + " " + gameObject.name);
     }

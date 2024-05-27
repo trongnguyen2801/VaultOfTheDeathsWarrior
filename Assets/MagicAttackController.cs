@@ -11,8 +11,7 @@ public class MagicAttackController : MonoBehaviour
         Character _cc = other.gameObject.GetComponent<Character>();
         if (_cc != null && _cc.isPlayer)
         {
-            _cc.ApplyDamage(damage);
-            Debug.Log("trigger enter in if");
+            _cc.ApplyDamage(damage,transform.position);
         }
 
         StartCoroutine(DestroyObject(2f));

@@ -1593,8 +1593,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 0
-  _runSpeed: 1
-  _sprintSpeed: 2
+  _runSpeed: 2.5
+  _sprintSpeed: 4
   JumpHeight: 2.2
   isPlayer: 1
   JumpTimeout: 0.3
@@ -6775,7 +6775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1250002273104469727, guid: ef599ecbaee3d4d20a880561f0f4f5c4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1516682854869505821, guid: ef599ecbaee3d4d20a880561f0f4f5c4, type: 3}
       propertyPath: m_Controller
@@ -6853,6 +6853,10 @@ PrefabInstance:
     - target: {fileID: 2167739513393911076, guid: d8c94f492a3f046a8959d70be99de6ee, type: 3}
       propertyPath: m_Name
       value: PbEnemyNecromancer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2167739513393911076, guid: d8c94f492a3f046a8959d70be99de6ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2167739513393911076, guid: d8c94f492a3f046a8959d70be99de6ee, type: 3}
       propertyPath: m_TagString
