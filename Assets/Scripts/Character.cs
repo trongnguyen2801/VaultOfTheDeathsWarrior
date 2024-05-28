@@ -261,11 +261,16 @@ public class Character : MonoBehaviour
                     if (_input.attack && _cc.isGrounded)
                     {
                         _attackAnimationDuration = _animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
-                        if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "Combo_01_4" && _attackAnimationDuration > 0.5f)
+                        if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "Combo_01_4" 
+                            && _attackAnimationDuration > 0.5f && _attackAnimationDuration < 0.7f)
                         {
                             _input.attack = false;
                             SwitchStateTo(CharacterState.Attacking);
                             CalculateMovementPlayer();
+                        }
+                        else
+                        {
+                            
                         }
                     }
                 }
