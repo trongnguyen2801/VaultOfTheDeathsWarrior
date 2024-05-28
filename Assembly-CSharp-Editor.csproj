@@ -737,15 +737,6 @@
      <Reference Include="UnityEngine.TestRunner">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VSCode.Editor">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.EditorCoroutines.Editor">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.VisualEffectGraph.Runtime">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VisualEffectGraph.Runtime.dll</HintPath>
      </Reference>
@@ -755,20 +746,74 @@
      <Reference Include="com.unity.cinemachine.editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.AI.Navigation">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.AI.Navigation.dll</HintPath>
+     <Reference Include="Unity.Postprocessing.Runtime">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Burst">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+     <Reference Include="Unity.AI.Navigation">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.AI.Navigation.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Rider.Editor">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Core.Editor">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualEffectGraph.Editor">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VisualEffectGraph.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Flow">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Mathematics.Editor">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="PPv2URPConverters">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/PPv2URPConverters.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TextMeshPro">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VSCode.Editor">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Editor">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.EditorCoroutines.Editor">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.PlasticSCM.Editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
@@ -791,32 +836,14 @@
      <Reference Include="Unity.VisualScripting.Core.Editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Rider.Editor">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-     </Reference>
      <Reference Include="UnityEngine.UI">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Core.Editor">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualEffectGraph.Editor">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VisualEffectGraph.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Flow.Editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Mathematics.Editor">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Flow">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
@@ -827,20 +854,8 @@
      <Reference Include="Unity.InputSystem.ForUI">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.InputSystem.ForUI.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
@@ -848,26 +863,23 @@
      <Reference Include="Unity.AI.Navigation.Updater">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.AI.Navigation.Updater.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Postprocessing.Editor">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="PPv2URPConverters">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/PPv2URPConverters.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Mathematics">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.TextMeshPro">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Searcher.Editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
      </Reference>
      <Reference Include="Unity.AI.Navigation.Editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.AI.Navigation.Editor.dll</HintPath>
@@ -877,12 +889,6 @@
      </Reference>
      <Reference Include="Cinemachine">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Universal.Editor">
-     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>

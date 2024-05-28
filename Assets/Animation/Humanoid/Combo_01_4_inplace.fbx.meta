@@ -474,15 +474,15 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.13397129
-        functionName: PlayVfxBlade04
+      - time: 0.1722488
+        functionName: EnableDamageCaster
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.1722488
-        functionName: EnableDamageCaster
+      - time: 0.4183463
+        functionName: PlayVfxBlade04
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
@@ -495,7 +495,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.8357506
+      - time: 0.7448415
         functionName: AttackAnimationEnds
         data: 
         objectReferenceParameter: {instanceID: 0}
