@@ -85,7 +85,7 @@ namespace CartoonHeroes
                         break;
                     }
                 }
-             }
+            }
             else {
                 if (disabledGraySkeleton != null)
                 {

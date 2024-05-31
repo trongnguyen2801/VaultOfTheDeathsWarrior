@@ -13,13 +13,26 @@ public class Character : MonoBehaviour
     private Animator _animator;
     private PlayerInput _playerInput;
     
-    [SerializeField]
     public float _moveSpeed;
     public float _runSpeed = 2.5f;
     public float _sprintSpeed = 4f;
     public float JumpHeight = 2.2f;
     public bool isPlayer = true;
 
+    public Avatar maleAvatar;
+    public Avatar feMaleAvatar;
+
+    
+    [Space(10)]
+    //Visual player
+    public GameObject visualMale;
+    public GameObject visualFemale;
+    
+    //Set sex player
+    // true is male, false is female
+    public bool isMale;
+
+    
     [Space(10)]
     private float _attackAnimationDuration;
     private float _gravity = -9.81f;
@@ -54,6 +67,7 @@ public class Character : MonoBehaviour
     private int _animIDBeingHit;
     private int _animIDAttack;
     private int _animIDRoll;
+    private int _canAttack;
 
     //Enemy
     private NavMeshAgent _navMeshAgent;
@@ -74,6 +88,7 @@ public class Character : MonoBehaviour
     }
     public CharacterState CurrentState;
     private bool _hasAnimator;
+    public float attackComboCount;
 
     private void Awake()
     {
@@ -94,8 +109,21 @@ public class Character : MonoBehaviour
 
     private void Start()
     {
-        _cc = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
+        if (isPlayer)
+        {
+            if (isMale)
+            {
+                visualMale.SetActive(true);
+                _animator.avatar = maleAvatar;
+            }
+            else
+            {
+                visualFemale.SetActive(true);
+                _animator.avatar = feMaleAvatar;
+            }
+        }
+        _cc = GetComponent<CharacterController>();
         _damageCaster = GetComponentInChildren<DamageCaster>();
         _health = GetComponent<Health>();
         _hasAnimator = TryGetComponent(out _animator);
@@ -103,8 +131,8 @@ public class Character : MonoBehaviour
         _jumpTimeoutDelta = JumpTimeout;
         _fallTimeoutDelta = FallTimeout;
         _isInvincible = false; // tesst
-        
         AssignAnimationIDs();
+        attackComboCount = 1;
     }
     
     private void AssignAnimationIDs()
@@ -123,7 +151,7 @@ public class Character : MonoBehaviour
 
     private void CalculateMovementPlayer()
     {
-        if (_input.attack && _cc.isGrounded)
+        if (_input.attack && _cc.isGrounded && attackComboCount < 5)
         {
             SwitchStateTo(CharacterState.Attacking);
             return;
@@ -236,11 +264,13 @@ public class Character : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         switch (CurrentState)
         {
             case CharacterState.Normal:
                 if (isPlayer)
                 {
+                    attackComboCount = 1;
                     JumpAndGravity();
                     CalculateMovementPlayer();
                 }
@@ -261,17 +291,16 @@ public class Character : MonoBehaviour
                     if (_input.attack && _cc.isGrounded)
                     {
                         _attackAnimationDuration = _animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
-                        if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "Combo_01_4" 
+                        if (_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "Combo04" 
                             && _attackAnimationDuration > 0.5f && _attackAnimationDuration < 0.7f)
                         {
+                            attackComboCount++;
                             _input.attack = false;
                             SwitchStateTo(CharacterState.Attacking);
                             CalculateMovementPlayer();
                         }
-                        else
-                        {
-                            
-                        }
+                        Debug.Log(_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
+
                     }
                 }
                 break;
@@ -288,7 +317,7 @@ public class Character : MonoBehaviour
                 break;
         }
 
-        if (isPlayer)
+        if (isPlayer && CurrentState != CharacterState.Dead)
         {
             // move the player
             _cc.Move(_movementVelocity + _verticalVelocity * Time.deltaTime);
@@ -314,7 +343,7 @@ public class Character : MonoBehaviour
 
                 if (isPlayer)
                 {
-                    GetComponent<VFXPlayerController>().StopBlade();
+                    // GetComponent<VFXPlayerController>().StopBlade();
                 }
                 break;
             case CharacterState.Sprint:
