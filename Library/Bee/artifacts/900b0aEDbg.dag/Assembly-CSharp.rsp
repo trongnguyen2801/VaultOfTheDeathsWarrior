@@ -388,6 +388,7 @@
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.14f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Cartoon Heroes/Scripts/SetCharacter/SetCharacter.cs"
 "Assets/MagicAttackController.cs"
+"Assets/ProfileManager.cs"
 "Assets/ProjectLittleAdventurer/Tool/CullingGroupExample.cs"
 "Assets/ProjectLittleAdventurer/Tool/G_Culler.cs"
 "Assets/ProjectLittleAdventurer/Tool/G_CullManager.cs"
@@ -396,6 +397,8 @@
 "Assets/Scripts/DamageCaster.cs"
 "Assets/Scripts/EnemyAttackController.cs"
 "Assets/Scripts/Health.cs"
+"Assets/Scripts/ItemSO.cs"
+"Assets/StartSceneManager.cs"
 "Assets/VFXPlayerController.cs"
 -langversion:9.0
 

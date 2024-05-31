@@ -29,7 +29,13 @@ public class Health : MonoBehaviour
             Debug.Log("death");
             _cc.SwitchStateTo(Character.CharacterState.Dead);
         }
-        Debug.Log(_currentHealth + " " + gameObject.name);
+
+        if (_cc.isPlayer)
+        {
+            float perHealth = _currentHealth / 100f;
+            ProfileManager.Instance.SetHealthAndMana(perHealth,1f);
+            Debug.Log(perHealth + " " + gameObject.name);
+        }
     }
 
     public void AddHealth(int val)
