@@ -387,8 +387,6 @@
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.14f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.14f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Cartoon Heroes/Scripts/SetCharacter/SetCharacter.cs"
-"Assets/MagicAttackController.cs"
-"Assets/ProfileManager.cs"
 "Assets/ProjectLittleAdventurer/Tool/CullingGroupExample.cs"
 "Assets/ProjectLittleAdventurer/Tool/G_Culler.cs"
 "Assets/ProjectLittleAdventurer/Tool/G_CullManager.cs"
@@ -397,9 +395,17 @@
 "Assets/Scripts/DamageCaster.cs"
 "Assets/Scripts/EnemyAttackController.cs"
 "Assets/Scripts/Health.cs"
+"Assets/Scripts/IDamageable.cs"
 "Assets/Scripts/ItemSO.cs"
-"Assets/StartSceneManager.cs"
-"Assets/VFXPlayerController.cs"
+"Assets/Scripts/MagicAttackController.cs"
+"Assets/Scripts/ProfileManager.cs"
+"Assets/Scripts/StartSceneManager.cs"
+"Assets/Scripts/VFXPlayerController.cs"
+"Assets/ShaderGraph_Dissolve/Utility/Scripts/DissolveChilds.cs"
+"Assets/ShaderGraph_Dissolve/Utility/Scripts/DissolveOffest.cs"
+"Assets/ShaderGraph_Dissolve/Utility/Scripts/Follow.cs"
+"Assets/ShaderGraph_Dissolve/Utility/Scripts/Rotator.cs"
+"Assets/ShaderGraph_Dissolve/Utility/Scripts/RotatorDissolveDir.cs"
 -langversion:9.0
 
 /deterministic

@@ -23,8 +23,7 @@ public class Health : MonoBehaviour
         {
             _currentHealth -= damage;
         }
-
-        if (_currentHealth <= 0)
+        else
         {
             Debug.Log("death");
             _cc.SwitchStateTo(Character.CharacterState.Dead);
