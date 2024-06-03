@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class Character_Input : MonoBehaviour
 {
-    [Header("Character Input Values")]
+    [Header("CharacterFirstDesign Input Values")]
     public Vector2 move;
     public bool jump;
     public bool sprint;

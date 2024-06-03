@@ -47,23 +47,26 @@
   <ItemGroup>
      <Compile Include="Assets/ShaderGraph_Dissolve/Utility/Scripts/RotatorDissolveDir.cs" />
      <Compile Include="Assets/Scripts/Character.cs" />
+     <Compile Include="Assets/Scripts/PlayerColtroller.cs" />
      <Compile Include="Assets/ShaderGraph_Dissolve/Utility/Scripts/Rotator.cs" />
-     <Compile Include="Assets/Scripts/Health.cs" />
+     <Compile Include="Assets/Scripts/Enemy/Enemy.cs" />
      <Compile Include="Assets/Scripts/ProfileManager.cs" />
      <Compile Include="Assets/ProjectLittleAdventurer/Tool/G_CullManager.cs" />
+     <Compile Include="Assets/Scripts/CharacterFirstDesign.cs" />
      <Compile Include="Assets/Scripts/VFXPlayerController.cs" />
      <Compile Include="Assets/Scripts/DamageCaster.cs" />
-     <Compile Include="Assets/Scripts/IDamageable.cs" />
      <Compile Include="Assets/ProjectLittleAdventurer/Tool/CullingGroupExample.cs" />
      <Compile Include="Assets/Cartoon Heroes/Scripts/SetCharacter/SetCharacter.cs" />
      <Compile Include="Assets/ShaderGraph_Dissolve/Utility/Scripts/DissolveOffest.cs" />
-     <Compile Include="Assets/Scripts/EnemyAttackController.cs" />
+     <Compile Include="Assets/Scripts/EnemyAttackMagic.cs" />
+     <Compile Include="Assets/Scripts/Player/Player.cs" />
      <Compile Include="Assets/ShaderGraph_Dissolve/Utility/Scripts/Follow.cs" />
      <Compile Include="Assets/Scripts/MagicAttackController.cs" />
      <Compile Include="Assets/ProjectLittleAdventurer/Tool/G_Culler.cs" />
      <Compile Include="Assets/Scripts/StartSceneManager.cs" />
-     <Compile Include="Assets/Scripts/ItemSO.cs" />
+     <Compile Include="Assets/Scripts/GameManager.cs" />
      <Compile Include="Assets/Scripts/Character_Input.cs" />
+     <Compile Include="Assets/Scripts/Interfaces/IDamageable.cs" />
      <Compile Include="Assets/ShaderGraph_Dissolve/Utility/Scripts/DissolveChilds.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets/Cartoon Heroes/Character Prefabs/Female" />
@@ -114,6 +117,7 @@
      <Folder Include="Assets/ShaderGraph_Dissolve" />
      <Folder Include="Assets/ShaderGraph_Dissolve/URP" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Torsos/Torso_1/Materials" />
+     <Folder Include="Assets/Scripts/Enemy" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Hairs" />
      <Folder Include="Assets/Cartoon Heroes" />
      <Folder Include="Assets/FantasyMonster/Skeleton" />
@@ -188,6 +192,7 @@
      <Folder Include="Assets/Ultimate 10 Plus Shaders/Materials/Unique" />
      <Folder Include="Assets/UnityTechnologies/ParticlePack/EffectExamples/Magic Effects" />
      <Folder Include="Assets/RPG Unitframe #1/img" />
+     <Folder Include="Assets/Scripts/Interfaces" />
      <Folder Include="Assets/ProjectLittleAdventurer/VFX/Textures" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Torsos/Torso_2" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_4/3D" />
@@ -233,6 +238,7 @@
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Hairs/Hair_2" />
      <Folder Include="Assets/Cartoon Heroes/Character Prefabs/Male" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Legs/Legs_3/Materials" />
+     <Folder Include="Assets/Scripts/Player" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Hairs/Hair_4" />
      <Folder Include="Assets/TextMesh Pro/Shaders" />

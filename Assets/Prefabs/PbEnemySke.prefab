@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7605920651050830444}
   - component: {fileID: 3377755073677645959}
   - component: {fileID: 1516682854869505821}
-  - component: {fileID: 6134250484376727218}
   - component: {fileID: 7730769994906861778}
-  - component: {fileID: 482839999231288689}
+  - component: {fileID: 4674826186621665842}
+  - component: {fileID: 7653316623590794934}
   m_Layer: 6
   m_Name: PbEnemySke
   m_TagString: Enemy
@@ -74,7 +74,7 @@ Animator:
   m_GameObject: {fileID: 1250002273104469727}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0, type: 3}
-  m_Controller: {fileID: 22100000, guid: a85601c028dd74ab4b50080702e92a50, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5b56920ad910b49409349176251ee909, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -85,25 +85,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6134250484376727218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250002273104469727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93f6d104009e24ed1b849a65f3b3e48f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlayer: 0
-  attackStartTime: 0
-  attackSlideDuraton: 0.4
-  attackSlideSpeed: 0.1
-  attackCoolDown: 1
-  _health: {fileID: 0}
-  CurrentState: 0
 --- !u!195 &7730769994906861778
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -126,7 +107,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &482839999231288689
+--- !u!114 &4674826186621665842
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,11 +116,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1250002273104469727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9971e1393c0a54404af49a46d2318b42, type: 3}
+  m_Script: {fileID: 11500000, guid: d275a289b5d6048139a84c5a2974a4ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _currentHealth: 0
+--- !u!114 &7653316623590794934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250002273104469727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c30d0525bc11459b8081a12c57860fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  CurrentState: 0
 --- !u!1 &6265321955069652756
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,8 +185,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.91, y: 0.93, z: 1.7}
-  m_Center: {x: 0, y: 0, z: 0.11223447}
+  m_Size: {x: 0.91, y: 0.93, z: 1.0004706}
+  m_Center: {x: 0, y: 0, z: 0.46199918}
 --- !u!114 &6442575514797124333
 MonoBehaviour:
   m_ObjectHideFlags: 0
