@@ -8,10 +8,12 @@ public class MagicAttackController : MonoBehaviour
     public int damage = 30;
     private void OnTriggerEnter(Collider other)
     {
-        Character _cc = other.gameObject.GetComponent<Character>();
-        if (_cc != null && _cc.isPlayer)
+        IDamageable damageable = other.GetComponent<IDamageable>();
+        Character cc = other.gameObject.GetComponent<Character>();
+        if (damageable != null && cc != null && cc.isPlayer)
         {
-            _cc.ApplyDamage(damage,transform.position);
+            damageable.ApplyDamage(damage);
+            // _cc.ApplyDamage(damage,transform.position);
         }
 
         StartCoroutine(DestroyObject(2f));

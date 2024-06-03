@@ -17,12 +17,20 @@ public class DamageCaster : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(targetTag) && !_damageTargetList.Contains(other))
+        IDamageable damageable = other.GetComponent<IDamageable>();
+        Debug.Log(other.name);
+        if (damageable != null && !_damageTargetList.Contains(other))
         {
-            Character targetCc = other.GetComponent<Character>();
-            targetCc.ApplyDamage(damage,transform.parent.position);
+            damageable.ApplyDamage(damage,transform.parent.position);
             _damageTargetList.Add(other);
         }
+        
+        // if (other.CompareTag(targetTag) && !_damageTargetList.Contains(other))
+        // {
+        //     Health health = other.GetComponent<Health>();
+        //     health.ApplyDamage(damage,transform.parent.position);
+        //     _damageTargetList.Add(other);
+        // }
     }
 
     public void EnableDamageCaster()

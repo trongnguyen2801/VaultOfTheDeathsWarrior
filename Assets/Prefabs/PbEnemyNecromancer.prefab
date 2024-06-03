@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 6232608549634563423}
   - component: {fileID: 6081786622796473992}
   - component: {fileID: 8465244951401363920}
-  - component: {fileID: 1967087558607156389}
   - component: {fileID: 4989599947837494073}
-  - component: {fileID: 1648353221485970784}
+  - component: {fileID: 1546598996882244443}
+  - component: {fileID: 967245491779221447}
+  - component: {fileID: 1848633023972947444}
+  - component: {fileID: -4007149748782924752}
   m_Layer: 0
   m_Name: PbEnemyNecromancer
   m_TagString: Untagged
@@ -73,7 +75,7 @@ Animator:
   m_GameObject: {fileID: 2167739513393911076}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
-  m_Controller: {fileID: 22100000, guid: d03c87d96449048e88df71133fdab39f, type: 2}
+  m_Controller: {fileID: 22100000, guid: 364030a554f124a71a49983e5b6335e0, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -84,25 +86,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1967087558607156389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2167739513393911076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93f6d104009e24ed1b849a65f3b3e48f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlayer: 0
-  attackStartTime: 0
-  attackSlideDuraton: 0.4
-  attackSlideSpeed: 0.1
-  attackCoolDown: 1
-  _health: {fileID: 0}
-  CurrentState: 0
 --- !u!195 &4989599947837494073
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -125,7 +108,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1648353221485970784
+--- !u!114 &1546598996882244443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,11 +117,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 2167739513393911076}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9971e1393c0a54404af49a46d2318b42, type: 3}
+  m_Script: {fileID: 11500000, guid: d275a289b5d6048139a84c5a2974a4ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _currentHealth: 0
+--- !u!114 &967245491779221447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2167739513393911076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90155ea3a88ea4c568aa5147de50865c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 30
+--- !u!114 &1848633023972947444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2167739513393911076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d7370d1e98af442bb896cdf3819dcd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PbAttack: {fileID: 6253682340987336986, guid: 32cc18c52ada74cb695d4039ad126264, type: 3}
+--- !u!114 &-4007149748782924752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2167739513393911076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c30d0525bc11459b8081a12c57860fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  CurrentState: 0
 --- !u!1001 &7954885663198375518
 PrefabInstance:
   m_ObjectHideFlags: 0

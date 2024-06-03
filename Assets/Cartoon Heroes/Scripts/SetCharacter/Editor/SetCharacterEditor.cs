@@ -20,7 +20,7 @@ namespace CartoonHeroes
 
             GUILayout.Space(defaultSpace);
 
-            setCharacter.characterRoot = EditorGUILayout.ObjectField("Character Root", setCharacter.characterRoot, typeof(Transform), true) as Transform;
+            setCharacter.characterRoot = EditorGUILayout.ObjectField("CharacterFirstDesign Root", setCharacter.characterRoot, typeof(Transform), true) as Transform;
 
             GUILayout.Space(defaultSpace);
 
