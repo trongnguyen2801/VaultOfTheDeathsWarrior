@@ -1,37 +1,40 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DissolveExample;
 using UnityEngine;
 
 public class StartSceneManager : MonoBehaviour
 {
-    public GameObject male;
-    public GameObject female;
+    public Animator animMale;
+    public Animator animFemale;
+
+    public DissolveChilds dissolveSwordFemale;
+    public DissolveChilds dissolveSwordMale;
+
+    public GameObject lightMale;
+    public GameObject lightFemale;
     
-    public GameObject cardMale;
-    public GameObject cardFemale;
+    public GameObject textNameMale;
+    public GameObject textNamefemale;
 
-    public void SetActivePlayer(bool sexChoice)
+    private void Start()
     {
-        if (sexChoice)
-        {
-            male.SetActive(true);
-            cardMale.SetActive(false);
-            cardFemale.SetActive(false);
-        }
-        else
-        {
-            female.SetActive(true);
-            cardMale.SetActive(false);
-            cardFemale.SetActive(false);
-        }
+        
     }
 
-    public void ChoiceAvatar()
+    public void SelectFemalePlayer()
     {
-        cardMale.SetActive(true);
-        cardFemale.SetActive(true);
-        male.SetActive(false);
-        female.SetActive(false);
+        lightFemale.SetActive(true);
+        animFemale.SetTrigger("Attack");
+        lightMale.SetActive(false);
+        
     }
+    public void SelectMalePlayer()
+    {
+        lightFemale.SetActive(false);
+        lightMale.SetActive(true);
+        animMale.SetTrigger("Attack");
+    }
+    
 }

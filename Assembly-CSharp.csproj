@@ -78,6 +78,7 @@
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_2/3D/Materials" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D" />
+     <Folder Include="Assets/Vefects/Free Fire VFX URP/Scene/Scenes" />
      <Folder Include="Assets/DungeonCharacters/Skeletons_demo/animation" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Legs/Legs_3/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Legs/Legs_3" />
@@ -93,6 +94,7 @@
      <Folder Include="Assets/ProjectLittleAdventurer/VFX" />
      <Folder Include="Assets/Hovl Studio/Resources/Settings" />
      <Folder Include="Assets/Hovl Studio/Magic effects pack/Prefabs/AoE effects" />
+     <Folder Include="Assets/Vefects/Free Fire VFX URP/Textures" />
      <Folder Include="Assets/Scripts" />
      <Folder Include="Assets/Prefabs/Profile" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Torsos/Torso_3" />
@@ -159,6 +161,7 @@
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Hairs/Hair_4" />
      <Folder Include="Assets/DungeonCharacters/Skeletons_demo" />
      <Folder Include="Assets/ShaderGraph_Dissolve/Utility/SubGraph" />
+     <Folder Include="Assets/Vefects/Free Fire VFX URP/Scene/Prefabs" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Heads/Head 2" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Torsos/Torso_2" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D" />
@@ -187,6 +190,7 @@
      <Folder Include="Assets/ProjectLittleAdventurer/Prefab/UI" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Heads/Head_3/Materials" />
      <Folder Include="Assets/Necromancer/Texture" />
+     <Folder Include="Assets/Vefects/Free Fire VFX URP/Scene/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Heads/Head_3" />
      <Folder Include="Assets/Ultimate 10 Plus Shaders" />
      <Folder Include="Assets/Ultimate 10 Plus Shaders/Materials/Unique" />
@@ -194,10 +198,12 @@
      <Folder Include="Assets/RPG Unitframe #1/img" />
      <Folder Include="Assets/Scripts/Interfaces" />
      <Folder Include="Assets/ProjectLittleAdventurer/VFX/Textures" />
+     <Folder Include="Assets/Vefects" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Torsos/Torso_2" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_4/3D" />
      <Folder Include="Assets/Toon_RTS" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" />
+     <Folder Include="Assets/Vefects/Free Fire VFX URP/Materials" />
      <Folder Include="Assets/ProjectLittleAdventurer/Tool" />
      <None Include="Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" />
@@ -205,14 +211,17 @@
      <Folder Include="Assets/ProjectLittleAdventurer/UI" />
      <Folder Include="Assets/Hovl Studio/Magic effects pack/Prefabs/Magic circles" />
      <Folder Include="Assets/ProjectLittleAdventurer/PP" />
+     <Folder Include="Assets/Vefects/Free Fire VFX URP/Scene/Settings" />
      <Folder Include="Assets/Hovl Studio/Magic effects pack/Prefabs/Hits and explosions" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF.shader" />
+     <None Include="Assets/Vefects/Free Fire VFX URP/Shaders/SH_Vefects_VFX_URP_Heat_Haze_01.shader" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Character" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Legs/Legs_1/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Heads" />
      <Folder Include="Assets/UnityTechnologies/ParticlePack/EffectExamples/Magic Effects/Prefabs" />
      <Folder Include="Assets/Sprites" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_3/Textures" />
+     <None Include="Assets/Vefects/Free Fire VFX URP/Shaders/SH_Vefects_VFX_URP_Particles_Erosion_01.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" />
      <Folder Include="Assets/VFX" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Torsos/Base Torso/Materials" />
@@ -222,6 +231,7 @@
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Hairs/Hair_3" />
      <None Include="Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Heads" />
+     <Folder Include="Assets/Vefects/Free Fire VFX URP/Lights" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Hairs" />
      <Folder Include="Assets/Ultimate 10 Plus Shaders/Materials/Textures" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Environment/Material" />
@@ -236,13 +246,16 @@
      <Folder Include="Assets/ProjectLittleAdventurer/Settings" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Torsos/Torso_1" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Hairs/Hair_2" />
+     <Folder Include="Assets/UnityTechnologies/ParticlePack/EffectExamples/Fire &amp; Explosion Effects/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Character Prefabs/Male" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Legs/Legs_3/Materials" />
      <Folder Include="Assets/Scripts/Player" />
+     <Folder Include="Assets/UnityTechnologies/ParticlePack/EffectExamples/Fire &amp; Explosion Effects/Textures" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Hairs/Hair_4" />
      <Folder Include="Assets/TextMesh Pro/Shaders" />
      <Folder Include="Assets/FantasyMonster/Skeleton/Ani/Materials" />
+     <Folder Include="Assets/UnityTechnologies/ParticlePack/EffectExamples/Fire &amp; Explosion Effects" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Character/NPC_02/Texture" />
      <Folder Include="Assets/TextMesh Pro/Resources/Style Sheets" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Legs/Legs_1" />
@@ -251,6 +264,7 @@
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Hairs/Hair_2" />
      <Folder Include="Assets/TextMesh Pro/Fonts" />
      <Folder Include="Assets/Cartoon Heroes/Scripts" />
+     <Folder Include="Assets/Vefects/Free Fire VFX URP/Shaders" />
      <Folder Include="Assets/Necromancer" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Environment/Mesh" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Character/NPC_01" />
@@ -258,6 +272,7 @@
      <Folder Include="Assets/Toon_RTS/Orc_Demo" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_1/Textures" />
      <Folder Include="Assets/ProjectLittleAdventurer/VFX/Prefab" />
+     <Folder Include="Assets/Vefects/Free Fire VFX URP" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Hairs/Hair_3/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Legs/Base Legs" />
      <Folder Include="Assets/Hovl Studio/Magic effects pack/Prefabs/Slash effects" />
@@ -283,6 +298,7 @@
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_1/3D" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Hairs/Hair_4/Materials" />
      <Folder Include="Assets/FantasyMonster/Skeleton/Ani" />
+     <None Include="Assets/Vefects/Free Fire VFX URP/Shaders/SH_Vefects_VFX_URP_Fire_Flames_01.shader" />
      <Folder Include="Assets/FantasyMonster/Skeleton/Character" />
      <Folder Include="Assets/minotaur1/Animations" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Heads/Head_2" />
@@ -298,6 +314,7 @@
      <Folder Include="Assets/ProjectLittleAdventurer/Prefab/MainMenu" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Legs/Base Legs/Materials" />
+     <Folder Include="Assets/Vefects/Free Fire VFX URP/Scene/Meshes" />
      <Folder Include="Assets/Hovl Studio/Magic effects pack" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Hairs/Hair_2" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Torsos" />
@@ -307,10 +324,12 @@
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Heads/Head 3" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Legs/Base Legs" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_4/Textures" />
+     <Folder Include="Assets/UnityTechnologies/ParticlePack/EffectExamples/Fire &amp; Explosion Effects/Prefabs" />
      <Folder Include="Assets/Toon_RTS/Orc_Demo/animation" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Hairs/Hair_4/Materials" />
      <Folder Include="Assets/Scenes/MainScene" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Legs/Legs_1/Materials" />
+     <Folder Include="Assets/Vefects/Free Fire VFX URP/Scene" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Environment" />
      <Folder Include="Assets/Cartoon Heroes/Weapons" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Heads/Head_3" />
@@ -337,7 +356,9 @@
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Legs/Legs_2" />
      <Folder Include="Assets/minotaur1/Materials" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Character/MainCharacter/Texture" />
+     <Folder Include="Assets/Vefects/Free Fire VFX URP/Scene/Textures" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Animation Skeleton" />
+     <Folder Include="Assets/Vefects/Free Fire VFX URP/Audio" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_4" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Legs/Base Legs/Materials" />
@@ -350,6 +371,7 @@
      <Folder Include="Assets/ShaderGraph_Dissolve/URP/ShaderGraph/DoubleSide" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Torsos/Torso_2" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_1" />
+     <Folder Include="Assets/Vefects/Free Fire VFX URP/Particles" />
      <Folder Include="Assets/minotaur1/Prefab" />
      <Folder Include="Assets/minotaur1" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Character/NPC_02" />
