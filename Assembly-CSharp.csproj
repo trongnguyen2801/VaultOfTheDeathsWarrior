@@ -60,12 +60,14 @@
      <Compile Include="Assets/LeanTween/Examples/Scripts/LogoCinematic.cs" />
      <Compile Include="Assets/Scripts/Enemy/Enemy.cs" />
      <Compile Include="Assets/LeanTween/Examples/Scripts/GeneralAdvancedTechniques.cs" />
+     <Compile Include="Assets/Scripts/PropertyHeroScreen.cs" />
      <Compile Include="Assets/LeanTween/Testing/TestingSceneSwitching.cs" />
      <Compile Include="Assets/LeanTween/Examples/Scripts/GeneralSequencer.cs" />
      <Compile Include="Assets/LeanTween/Examples/Scripts/GeneralEventsListeners.cs" />
      <Compile Include="Assets/LeanTween/Examples/Scripts/PathBezier2d.cs" />
      <Compile Include="Assets/LeanTween/Examples/Scripts/PathSplinePerformance.cs" />
      <Compile Include="Assets/LeanTween/Examples/Scripts/GeneralEasingTypes.cs" />
+     <Compile Include="Assets/Scripts/NavbarBehavior.cs" />
      <Compile Include="Assets/LeanTween/Framework/LeanTweenExt.cs" />
      <Compile Include="Assets/LeanTween/Framework/LeanAudio.cs" />
      <Compile Include="Assets/LeanTween/Framework/LTDescrOptional.cs" />
@@ -73,6 +75,7 @@
      <Compile Include="Assets/ProjectLittleAdventurer/Tool/G_CullManager.cs" />
      <Compile Include="Assets/LeanTween/Testing/TestingIssue.cs" />
      <Compile Include="Assets/Scripts/CharacterFirstDesign.cs" />
+     <Compile Include="Assets/Scripts/DataManager.cs" />
      <Compile Include="Assets/LeanTween/Testing/FollowingTests.cs" />
      <Compile Include="Assets/Scripts/VFXPlayerController.cs" />
      <Compile Include="Assets/LeanTween/Testing/TestingOptionalCancel.cs" />
@@ -99,6 +102,7 @@
      <Compile Include="Assets/LeanTween/Testing/Scripts/LeanPool.cs" />
      <Compile Include="Assets/ProjectLittleAdventurer/Tool/G_Culler.cs" />
      <Compile Include="Assets/LeanTween/Testing/PerformanceTests.cs" />
+     <Compile Include="Assets/Scripts/DontDestroy.cs" />
      <Compile Include="Assets/Scripts/StartSceneManager.cs" />
      <Compile Include="Assets/Scripts/GameManager.cs" />
      <Compile Include="Assets/LeanTween/Testing/Testing246.cs" />
@@ -127,6 +131,7 @@
      <Folder Include="Assets/Vefects/Free Fire VFX URP/Scene/Scenes" />
      <Folder Include="Assets/DungeonCharacters/Skeletons_demo/animation" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Legs/Legs_3/Materials" />
+     <Folder Include="Assets/PlayerPrefsEditor/Samples" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Legs/Legs_3" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_3/3D" />
      <Folder Include="Assets/LeanTween/Testing/Scripts" />
@@ -335,11 +340,13 @@
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Torsos/Torso_3" />
      <Folder Include="Assets/Toon_RTS/Orc_Demo" />
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_1/Textures" />
+     <Folder Include="Assets/PlayerPrefsEditor" />
      <Folder Include="Assets/ProjectLittleAdventurer/VFX/Prefab" />
      <Folder Include="Assets/Vefects/Free Fire VFX URP" />
      <Folder Include="Assets/Cartoon Heroes/Female/3D/Hairs/Hair_3/Materials" />
      <Folder Include="Assets/Cartoon Heroes/Male/Textures/Legs/Base Legs" />
      <Folder Include="Assets/Hovl Studio/Magic effects pack/Prefabs/Slash effects" />
+     <Folder Include="Assets/PlayerPrefsEditor/Documentation/Images" />
      <None Include="Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
      <Folder Include="Assets/Cartoon Heroes/Female/Textures/Hairs" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset" />
@@ -375,6 +382,7 @@
      <Folder Include="Assets/Cartoon Heroes/Weapons/Sword_2/Textures" />
      <Folder Include="Assets/ProjectLittleAdventurer/Mesh Asset/Environment/Texture" />
      <Folder Include="Assets/Cartoon Heroes/Male/3D/Heads/Head_2/Materials" />
+     <Folder Include="Assets/PlayerPrefsEditor/Documentation" />
      <Folder Include="Assets/minotaur1/Base mesh" />
      <Folder Include="Assets/ProjectLittleAdventurer/Prefab/MainMenu" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
@@ -1099,6 +1107,9 @@
      <Reference Include="Unity.Rider.Editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.2D.Sprite.Editor">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
      </Reference>
@@ -1233,6 +1244,18 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.PlayerPrefsEditor.Editor.csproj">
+      <Project>{a5548a16-2589-cf4a-b32e-ee6e0041851c}</Project>
+      <Name>Unity.PlayerPrefsEditor.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.PlayerPrefsEditor.Samples.SampleScene.csproj">
+      <Project>{62fd750d-d593-fd26-6147-d8316490cb5d}</Project>
+      <Name>Unity.PlayerPrefsEditor.Samples.SampleScene</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.PlayerPrefsEditor.EditorResources.csproj">
+      <Project>{7df2765f-81e6-ee38-63e2-c6f7b4cd3adb}</Project>
+      <Name>Unity.PlayerPrefsEditor.EditorResources</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

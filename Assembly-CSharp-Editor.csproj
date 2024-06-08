@@ -760,6 +760,9 @@
      <Reference Include="Unity.Rider.Editor">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.2D.Sprite.Editor">
+     <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
      <HintPath>/Users/schwi/Desktop/UnityProJect/Vault_Of_The_Deaths_Warrior/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
      </Reference>
@@ -897,6 +900,18 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{370de7c2-b989-686c-0136-cd1befd51b41}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.PlayerPrefsEditor.Editor.csproj">
+      <Project>{a5548a16-2589-cf4a-b32e-ee6e0041851c}</Project>
+      <Name>Unity.PlayerPrefsEditor.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.PlayerPrefsEditor.Samples.SampleScene.csproj">
+      <Project>{62fd750d-d593-fd26-6147-d8316490cb5d}</Project>
+      <Name>Unity.PlayerPrefsEditor.Samples.SampleScene</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.PlayerPrefsEditor.EditorResources.csproj">
+      <Project>{7df2765f-81e6-ee38-63e2-c6f7b4cd3adb}</Project>
+      <Name>Unity.PlayerPrefsEditor.EditorResources</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

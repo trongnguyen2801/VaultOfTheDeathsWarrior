@@ -335,7 +335,7 @@ public class LeanTween : MonoBehaviour {
             if(Application.isPlaying)
                 DontDestroyOnLoad( _tweenEmpty );
             #else
-            DontDestroyOnLoad( _tweenEmpty );
+            DontDestroy( _tweenEmpty );
             #endif
             for(int i = 0; i < maxTweens; i++){
                 tweens[i] = new LTDescr();

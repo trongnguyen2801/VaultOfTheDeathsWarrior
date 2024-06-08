@@ -11,6 +11,9 @@ public class StartSceneManager : MonoBehaviour
     public Animator animMale;
     public Animator animFemale;
 
+    public GameObject selectCharacterScreen;
+    public GameObject propertyCharacterScreen;
+
     public DissolveChilds dissolveSwordFemale;
     public DissolveChilds dissolveSwordMale;
 
@@ -31,6 +34,16 @@ public class StartSceneManager : MonoBehaviour
         }
 
         SetValue(0);
+
+        if (PlayerPrefs.GetInt("StartScreen") == 0)
+        {
+            selectCharacterScreen.SetActive(true);
+        }
+        else
+        {
+            propertyCharacterScreen.SetActive(true);
+        }
+        Debug.Log("screen " + PlayerPrefs.GetInt("StartScreen"));
     }
     
     public void SetValue(float value)
@@ -48,6 +61,8 @@ public class StartSceneManager : MonoBehaviour
         animFemale.SetTrigger("Attack");
         lightMale.SetActive(false);
         textNameMale.gameObject.SetActive(false);
+        PlayerPrefs.SetInt("PlayerSex",1);
+        // DataManager.Instance.SaveData(DataManager.dataName.PlayerSex,1);
     }
     public void SelectMalePlayer()
     {
@@ -56,5 +71,14 @@ public class StartSceneManager : MonoBehaviour
         lightMale.SetActive(true);
         textNameMale.gameObject.SetActive(true);
         animMale.SetTrigger("Attack");
+        PlayerPrefs.SetInt("PlayerSex",0);
+        // DataManager.Instance.SaveData(DataManager.dataName.PlayerSex,0);
+    }
+
+    public void SwapScreenStartScene(int screen)
+    {
+        selectCharacterScreen.SetActive(false);
+        propertyCharacterScreen.SetActive(true);
+        PlayerPrefs.SetInt("StartScreen",1);
     }
 }
