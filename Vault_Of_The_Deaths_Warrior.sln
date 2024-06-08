@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{370de7c2-b989-686c-0136-cd1befd51b41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.PlayerPrefsEditor.Editor", "Unity.PlayerPrefsEditor.Editor.csproj", "{a5548a16-2589-cf4a-b32e-ee6e0041851c}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{59d3b3e6-b85a-515c-5c1c-2a1484bc68f5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.PlayerPrefsEditor.EditorResources", "Unity.PlayerPrefsEditor.EditorResources.csproj", "{7df2765f-81e6-ee38-63e2-c6f7b4cd3adb}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.PlayerPrefsEditor.Samples.SampleScene", "Unity.PlayerPrefsEditor.Samples.SampleScene.csproj", "{62fd750d-d593-fd26-6147-d8316490cb5d}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,8 +18,14 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{370de7c2-b989-686c-0136-cd1befd51b41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{370de7c2-b989-686c-0136-cd1befd51b41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{a5548a16-2589-cf4a-b32e-ee6e0041851c}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{a5548a16-2589-cf4a-b32e-ee6e0041851c}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59d3b3e6-b85a-515c-5c1c-2a1484bc68f5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{59d3b3e6-b85a-515c-5c1c-2a1484bc68f5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7df2765f-81e6-ee38-63e2-c6f7b4cd3adb}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7df2765f-81e6-ee38-63e2-c6f7b4cd3adb}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62fd750d-d593-fd26-6147-d8316490cb5d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62fd750d-d593-fd26-6147-d8316490cb5d}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
